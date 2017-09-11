@@ -20,13 +20,14 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
 
+      // put your fire base settings 
       var firebaseConfig = {
-        apiKey: "AIzaSyB9h85e90s-UH99y4EFjlFBI2IAQfgDejk",
-        authDomain: "frhosting-babe8.firebaseapp.com",
-        databaseURL: "https://frhosting-babe8.firebaseio.com",
-        projectId: "frhosting-babe8",
-        storageBucket: "frhosting-babe8.appspot.com",
-        messagingSenderId: "215139149062"
+        apiKey: "",
+        authDomain: "",
+        databaseURL: "",
+        projectId: "",
+        storageBucket: "",
+        messagingSenderId: ""
       };
       
       firebase.initializeApp(firebaseConfig);
