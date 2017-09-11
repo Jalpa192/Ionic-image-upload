@@ -1,0 +1,8 @@
+{
+    "name": "ImageUploadDemo",
+    "app_id": "5cd11b47",
+    "type": "ionic-angular",
+    "integrations": {
+        "cordova": {}
+    }
+}

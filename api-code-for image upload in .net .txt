@@ -1,0 +1,36 @@
+//request method code
+
+	[HttpPost]
+				public string GetImage()
+				{
+						var file = HttpContext.Current.Request.Files.Count > 0 ?
+										HttpContext.Current.Request.Files[0] : null;
+						if (file != null && file.ContentLength > 0)
+						{
+								var fileName = Path.GetFileName(file.FileName);
+
+								var path = Path.Combine(
+												HttpContext.Current.Server.MapPath("~/Images"),
+												fileName
+								);
+
+								file.SaveAs(path);
+						}
+						return file != null ? "/Images/" + file.FileName : null;
+				}
+
+// set content type- media formator
+//chnages in global.asx
+//
+
+	GlobalConfiguration.Configuration.Formatters.Add(new FormMultipartEncodedMediaTypeFormatter());
+
+// install nuget package:
+- MultipartDataMediaFormatter
+
+// code for refrence
+// image upload
+https://devdactic.com/ionic-2-images/
+http://www.c-sharpcorner.com/article/angular-2-file-upload-using-web-api/
+https://stackoverflow.com/questions/27562343/posting-form-data-and-a-file-to-asp-net-web-api
+MultipartDataMediaFormatter
